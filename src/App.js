@@ -27,10 +27,9 @@ function App() {
 
     setResult(`
       Ja tu būtu ieguldījis S&P 500 fondā ${fromData.amount}€ pirms ${fromData.years} gadiem,
-      tad tagad tu būtu ${(amount - fromData.amount).toFixed(2)}€ plusā!
+      tad tagad tu būtu ${(amount - fromData.amount).toFixed(2)}€ plusā! 
+      Kopā kontā būs ${amount.toFixed(2)}€
     `)
-
-    console.log(amount.toFixed(2));
   }
 
   return (
@@ -56,7 +55,7 @@ function App() {
                 onChange={(e) => {
                   setFormData({
                     ...fromData,
-                     amount: e.target.value,
+                     amount: Number(e.target.value),
                   })
                 }}
               />
@@ -68,7 +67,7 @@ function App() {
                 onChange={(e) => {
                   setFormData({
                     ...fromData,
-                     years: e.target.value,
+                     years: Number(e.target.value),
                   })
                 }}
               >
